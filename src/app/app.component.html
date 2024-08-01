@@ -1,5 +1,20 @@
-<div class="container d-flex">
-<div class="col-md-5">Hi</div>
-<div class="col-md-7">Hello</div>
+<div class="d-flex">
+    <div class="w-1">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="w-2 bg-white">
+        <div>
+            <app-header></app-header>
+        </div>
+        <div class="p-1">
+            <app-search></app-search>
+        </div>
+        <div>
+            <app-user-list (userSelected)="onUserSelected($event)"></app-user-list>
+        </div>
+    </div>
+    <div class="col-md-6 bg-light">
+        <app-chat-window [showChat]="showChat" [messages]="messages" [user]="selectedUser"></app-chat-window>
+    </div>
 </div>
 <router-outlet></router-outlet>

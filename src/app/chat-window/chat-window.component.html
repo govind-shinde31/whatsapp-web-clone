@@ -1,0 +1,24 @@
+<div *ngIf="!showChat" class="splash-screen d-flex w-100 h-100 flex-column justify-content-center align-items-center">
+  <img src="assets/images/wa-welcome.png" width="400px" alt="whatsapp welcome"/>
+  <div class="py-4 fs-1">WhatsApp Web</div>
+  <div class="subtitle">
+    Send and receive messages without keeping your phone online..
+  </div>
+  <div class="subtitle">
+    Use WhatsApp on up to 4 linked devices and 1 phone at the same time.
+  </div>
+</div>
+
+<div *ngIf="user" class="user-info positin-fixed ht">
+  <h3 class="px-3 pt-2">{{ user.name }}</h3>
+</div>
+
+<div *ngIf="showChat" class="chat-container">
+  <div class="messages">
+    <div class="message" *ngFor="let message of messages">
+      <div class="message-text">{{ message.content }}</div>
+      <!-- <div class="message-time">{{ formatDate(message.time) }}</div> -->
+    </div>
+  </div>
+  <app-chatinput class="chat-input"></app-chatinput>
+</div>
